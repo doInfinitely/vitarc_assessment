@@ -1,0 +1,133 @@
+{
+  "patient_id": "VTR-00471",
+  "demographics": {
+    "name": "Sara Ahmed Shalabi",
+    "date_of_birth": "1971-03-14",
+    "gender": "Female",
+    "blood_type": "A+",
+    "height_cm": 162,
+    "weight_kg": 78.4,
+    "bmi": 29.9,
+    "national_id": "REDACTED",
+    "city": "Jeddah",
+    "emergency_contact": {
+      "name": "Khalid Shalabi",
+      "relation": "Son",
+      "phone": "+966-5X-XXX-XXXX"
+    }
+  },
+  "conditions": [
+    {
+      "icd10": "I10",
+      "name": "Essential Hypertension",
+      "diagnosed": "2016-08-22",
+      "status": "active",
+      "severity": "Stage 2",
+      "managing_facility": "King Abdulaziz University Hospital"
+    },
+    {
+      "icd10": "E11.65",
+      "name": "Type 2 Diabetes Mellitus with Hyperglycemia",
+      "diagnosed": "2019-01-10",
+      "status": "active",
+      "severity": "moderate",
+      "managing_facility": "Saudi German Hospital"
+    },
+    {
+      "icd10": "J45.30",
+      "name": "Mild Persistent Asthma",
+      "diagnosed": "2005-06-01",
+      "status": "active",
+      "severity": "mild",
+      "managing_facility": "Dr. Soliman Fakeeh Hospital"
+    }
+  ],
+  "medications": [
+    {
+      "name": "Amlodipine",
+      "dose": "10mg",
+      "frequency": "once daily",
+      "scheduled_time": "08:00",
+      "indication": "Hypertension",
+      "prescriber": "Dr. Faisal Al-Ghamdi",
+      "start_date": "2023-05-15"
+    },
+    {
+      "name": "Losartan",
+      "dose": "100mg",
+      "frequency": "once daily",
+      "scheduled_time": "08:00",
+      "indication": "Hypertension",
+      "prescriber": "Dr. Faisal Al-Ghamdi",
+      "start_date": "2021-11-03"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000mg",
+      "frequency": "twice daily",
+      "scheduled_time": "08:00, 20:00",
+      "indication": "Diabetes",
+      "prescriber": "Dr. Noura Al-Harbi",
+      "start_date": "2019-02-20"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "20mg",
+      "frequency": "once daily",
+      "scheduled_time": "22:00",
+      "indication": "Dyslipidemia",
+      "prescriber": "Dr. Noura Al-Harbi",
+      "start_date": "2022-09-01"
+    },
+    {
+      "name": "Salbutamol Inhaler",
+      "dose": "100mcg/puff",
+      "frequency": "as needed",
+      "scheduled_time": null,
+      "indication": "Asthma",
+      "prescriber": "Dr. Amira Batarfi",
+      "start_date": "2005-06-15"
+    }
+  ],
+  "allergies": [
+    {
+      "substance": "Penicillin",
+      "reaction": "Urticaria",
+      "severity": "moderate"
+    },
+    {
+      "substance": "NSAIDs",
+      "reaction": "Bronchospasm",
+      "severity": "severe",
+      "note": "Linked to asthma exacerbation"
+    }
+  ],
+  "care_team": [
+    {
+      "name": "Dr. Faisal Al-Ghamdi",
+      "specialty": "Internal Medicine",
+      "facility": "King Abdulaziz University Hospital",
+      "last_visit": "2026-02-18",
+      "next_appointment": "2026-06-10"
+    },
+    {
+      "name": "Dr. Noura Al-Harbi",
+      "specialty": "Endocrinology",
+      "facility": "Saudi German Hospital",
+      "last_visit": "2026-01-05",
+      "next_appointment": "2026-04-20"
+    },
+    {
+      "name": "Dr. Amira Batarfi",
+      "specialty": "Pulmonology",
+      "facility": "Dr. Soliman Fakeeh Hospital",
+      "last_visit": "2025-10-30",
+      "next_appointment": null
+    }
+  ],
+  "hospital_records_sources": [
+    "King Abdulaziz University Hospital",
+    "Saudi German Hospital",
+    "Dr. Soliman Fakeeh Hospital"
+  ]
+}

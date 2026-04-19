@@ -1,0 +1,196 @@
+{
+  "patient_id": "VTR-00471",
+  "export_format": "vitarc_manual_v1",
+  "entries": [
+    {
+      "id": "ME-001",
+      "type": "blood_pressure",
+      "timestamp": "2026-04-08T07:45:00Z",
+      "values": {
+        "systolic_mmhg": 142,
+        "diastolic_mmhg": 88
+      },
+      "context": "morning_fasting",
+      "notes": null
+    },
+    {
+      "id": "ME-002",
+      "type": "blood_glucose",
+      "timestamp": "2026-04-08T07:50:00Z",
+      "values": {
+        "glucose_mg_dl": 168
+      },
+      "context": "fasting",
+      "notes": null
+    },
+    {
+      "id": "ME-003",
+      "type": "medication_taken",
+      "timestamp": "2026-04-08T08:10:00Z",
+      "values": {
+        "medications": ["Amlodipine 10mg", "Losartan 100mg", "Metformin 1000mg"]
+      },
+      "context": "morning_dose",
+      "notes": null
+    },
+    {
+      "id": "ME-004",
+      "type": "blood_glucose",
+      "timestamp": "2026-04-08T13:30:00Z",
+      "values": {
+        "glucose_mg_dl": 195
+      },
+      "context": "post_meal",
+      "notes": "Had kabsa for lunch"
+    },
+    {
+      "id": "ME-005",
+      "type": "blood_pressure",
+      "timestamp": "2026-04-08T18:00:00Z",
+      "values": {
+        "systolic_mmhg": 134,
+        "diastolic_mmhg": 82
+      },
+      "context": "evening",
+      "notes": null
+    },
+    {
+      "id": "ME-006",
+      "type": "medication_taken",
+      "timestamp": "2026-04-08T20:15:00Z",
+      "values": {
+        "medications": ["Metformin 1000mg"]
+      },
+      "context": "evening_dose",
+      "notes": null
+    },
+    {
+      "id": "ME-007",
+      "type": "medication_taken",
+      "timestamp": "2026-04-08T22:05:00Z",
+      "values": {
+        "medications": ["Atorvastatin 20mg"]
+      },
+      "context": "night_dose",
+      "notes": null
+    },
+    {
+      "id": "ME-008",
+      "type": "symptom",
+      "timestamp": "2026-04-08T23:30:00Z",
+      "values": {
+        "symptom": "mild_headache",
+        "severity": 3
+      },
+      "context": "bedtime",
+      "notes": "Slight headache, took paracetamol"
+    },
+
+    {
+      "id": "ME-009",
+      "type": "blood_pressure",
+      "timestamp": "2026-04-09T07:30:00Z",
+      "values": {
+        "systolic_mmhg": 148,
+        "diastolic_mmhg": 92
+      },
+      "context": "morning_fasting",
+      "notes": "Didn't sleep well"
+    },
+    {
+      "id": "ME-010",
+      "type": "blood_glucose",
+      "timestamp": "2026-04-09T07:35:00Z",
+      "values": {
+        "glucose_mg_dl": 182
+      },
+      "context": "fasting",
+      "notes": null
+    },
+    {
+      "id": "ME-011",
+      "type": "medication_taken",
+      "timestamp": "2026-04-09T11:45:00Z",
+      "values": {
+        "medications": ["Amlodipine 10mg", "Losartan 100mg", "Metformin 1000mg"]
+      },
+      "context": "morning_dose",
+      "notes": "Forgot to take at 8am, took late"
+    },
+    {
+      "id": "ME-012",
+      "type": "blood_glucose",
+      "timestamp": "2026-04-09T14:00:00+03:00",
+      "values": {
+        "glucose_mmol_l": 12.8
+      },
+      "context": "post_meal",
+      "notes": null
+    },
+    {
+      "id": "ME-013",
+      "type": "blood_pressure",
+      "timestamp": "2026-04-09T16:30:00Z",
+      "values": {
+        "systolic_mmhg": 162,
+        "diastolic_mmhg": 98
+      },
+      "context": "afternoon",
+      "notes": "Feeling dizzy"
+    },
+    {
+      "id": "ME-014",
+      "type": "symptom",
+      "timestamp": "2026-04-09T16:35:00Z",
+      "values": {
+        "symptom": "dizziness",
+        "severity": 6
+      },
+      "context": "afternoon",
+      "notes": "Started around 3pm, getting worse"
+    },
+    {
+      "id": "ME-015",
+      "type": "blood_pressure",
+      "timestamp": "2026-04-09T19:00:00Z",
+      "values": {
+        "systolic": 171,
+        "diastolic": 101
+      },
+      "context": "evening",
+      "notes": "Still dizzy. Should I go to ER?"
+    },
+    {
+      "id": "ME-016",
+      "type": "symptom",
+      "timestamp": "2026-04-09T19:05:00Z",
+      "values": {
+        "symptom": "chest_tightness",
+        "severity": 4
+      },
+      "context": "evening",
+      "notes": "Mild tightness, might be anxiety"
+    },
+    {
+      "id": "ME-017",
+      "type": "medication_taken",
+      "timestamp": "2026-04-09T20:30:00Z",
+      "values": {
+        "medications": ["Metformin 1000mg"]
+      },
+      "context": "evening_dose",
+      "notes": null
+    },
+    {
+      "id": "ME-018",
+      "type": "inhaler_use",
+      "timestamp": "2026-04-09T21:00:00Z",
+      "values": {
+        "medication": "Salbutamol",
+        "puffs": 2
+      },
+      "context": "as_needed",
+      "notes": "Chest felt tight, used inhaler as precaution"
+    }
+  ]
+}
