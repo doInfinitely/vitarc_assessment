@@ -688,7 +688,7 @@ def detect_anomalies(events, wearable, profile):
             ))
         elif symptom_name.lower() in ("mild headache", "headache", "fatigue"):
             severity = "low"
-            title = f"Mild {symptom_name.title()} at Bedtime" if "headache" in symptom_name.lower() else f"Mild {symptom_name.title()}"
+            title = f"Mild Headache at Bedtime" if "headache" in symptom_name.lower() else f"{symptom_name.title()}"
             desc = f"Patient reports {symptom_name} (severity {severity_val}/10)."
             if se["data"].get("notes"):
                 desc += f" {se['data']['notes']}."
