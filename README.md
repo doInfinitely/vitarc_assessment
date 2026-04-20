@@ -33,6 +33,11 @@ sudo apt install poppler-utils tesseract-ocr
 pip install numpy opencv-python pillow sentence-transformers scikit-learn
 ```
 
+**API server** (optional):
+```bash
+pip install fastapi uvicorn
+```
+
 > Stages 3-5 require only the Python standard library. If you only need timeline construction and anomaly detection, skip stages 1-2 with `--from 3`.
 
 ## Pipeline Stages
@@ -87,6 +92,47 @@ open timeline_viewer/index.html
 - Anomaly source badges (Ground Truth / Programmatic / Both)
 - Wearable data tracks appear when zoomed into the April 8-9 monitoring window
 
+## Health Snapshot API
+
+The `api_server.py` exposes a REST API for querying patient health data. Requires `fastapi` and `uvicorn`.
+
+```bash
+# Start the API server (default port 8000)
+python3 api_server.py
+
+# Custom port
+python3 api_server.py --port 9000
+```
+
+### Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/patient` | Patient demographics and summary stats |
+| `GET` | `/patient/snapshot` | Current (latest) health snapshot |
+| `GET` | `/patient/snapshot/{event_id}` | Snapshot at a specific event |
+| `GET` | `/patient/timeline` | Full event timeline (`?category=`, `?limit=`) |
+| `GET` | `/patient/anomalies` | All anomalies (`?severity=`, `?category=`) |
+| `GET` | `/patient/anomalies/{anomaly_id}` | Single anomaly detail |
+
+### Example Queries
+
+```bash
+# Current health snapshot (latest vitals, meds, symptoms, care team alerts)
+curl http://localhost:8000/patient/snapshot
+
+# Snapshot at a specific event
+curl http://localhost:8000/patient/snapshot/evt-030
+
+# Only critical anomalies
+curl http://localhost:8000/patient/anomalies?severity=critical
+
+# Manual entry events, limited to 5
+curl "http://localhost:8000/patient/timeline?category=manual_entry&limit=5"
+```
+
+Interactive API docs available at `http://localhost:8000/docs` (Swagger UI).
+
 ## Anomaly Detection
 
 The `detect_programmatic.py` script implements 9 rule-based detectors:
@@ -116,6 +162,7 @@ anomaly_ground_truth/       # Manually curated anomalies
 anomaly_programmatic/       # Programmatic anomaly detection output
 timeline_viewer/            # Interactive HTML viewer
 decision_tree_viz/          # Decision tree visualization
+api_server.py               # FastAPI health snapshot API
 config.toml                 # Heading clustering threshold
 PLANNING.md                 # Detailed planning log for each stage
 ```
