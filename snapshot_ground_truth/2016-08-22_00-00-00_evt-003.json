@@ -1,0 +1,15 @@
+{
+  "event_id": "evt-003",
+  "datetime": "2016-08-22T00:00:00",
+  "event_title": "Essential Hypertension Diagnosed",
+  "most_recent_vitals": {},
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Diagnosis of Essential Hypertension (Stage 2). Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "No immediate attention items."
+  ]
+}

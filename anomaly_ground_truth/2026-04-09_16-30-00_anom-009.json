@@ -1,0 +1,22 @@
+{
+  "anomaly_id": "anom-009",
+  "event_id": "evt-028",
+  "datetime": "2026-04-09T16:30:00Z",
+  "category": "vital_sign",
+  "severity": "high",
+  "title": "Blood Pressure 162/98 mmHg with Dizziness",
+  "description": "BP 162/98 mmHg with patient reporting dizziness. Continued rising trend: 134\u2192142\u2192148\u2192162 systolic over 36 hours. Symptomatic hypertension requires clinical attention.",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "162/98",
+      "context": "afternoon"
+    },
+    {
+      "type": "symptom",
+      "symptom": "dizziness",
+      "notes": "Feeling dizzy"
+    }
+  ],
+  "clinical_context": "Symptomatic Stage 2 hypertension with end-organ disease risk. Morning antihypertensives taken 3h45m late may be contributing factor."
+}

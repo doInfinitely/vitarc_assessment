@@ -1,0 +1,21 @@
+{
+  "anomaly_id": "anom-018",
+  "event_id": "evt-012",
+  "datetime": "2026-02-18T00:00:00",
+  "category": "document",
+  "severity": "moderate",
+  "title": "Echocardiogram: LV Hypertrophy and Grade I Diastolic Dysfunction",
+  "description": "Transthoracic echocardiogram shows concentric left ventricular hypertrophy with Grade I diastolic dysfunction (impaired relaxation). LVEF preserved at 55%. Consistent with hypertensive heart disease in patient with long-standing Stage 2 HTN.",
+  "related_data": [
+    {
+      "type": "echo_finding",
+      "finding": "LV hypertrophy",
+      "LVEF": "55%"
+    },
+    {
+      "type": "echo_finding",
+      "finding": "Grade I diastolic dysfunction"
+    }
+  ],
+  "clinical_context": "LVH is a major cardiovascular risk factor. Indicates end-organ damage from chronic hypertension. Optimal BP control (<130/80) is essential to prevent progression to heart failure."
+}

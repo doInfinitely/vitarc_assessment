@@ -1,0 +1,27 @@
+{
+  "anomaly_id": "anom-005",
+  "event_id": "evt-024",
+  "datetime": "2026-04-09T07:30:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Morning Blood Pressure 148/92 mmHg (Rising Trend)",
+  "description": "Morning fasting BP 148/92 mmHg, up from 142/88 yesterday. Patient notes 'Didn't sleep well'. Rising BP trend is concerning. Sleep data confirms poor sleep quality (awake period 00:10-00:35 UTC).",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "148/92",
+      "context": "morning_fasting"
+    },
+    {
+      "type": "blood_pressure",
+      "value": "142/88",
+      "context": "morning_fasting",
+      "when": "2026-04-08T07:45:00Z"
+    },
+    {
+      "type": "sleep",
+      "note": "Poor sleep with awake period"
+    }
+  ],
+  "clinical_context": "BP rising from 142\u2192148 systolic over 24h despite medication. Poor sleep can elevate morning BP. Patient notes sleep difficulties."
+}

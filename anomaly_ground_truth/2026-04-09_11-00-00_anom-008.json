@@ -1,0 +1,19 @@
+{
+  "anomaly_id": "anom-008",
+  "event_id": "evt-026",
+  "datetime": "2026-04-09T11:00:00Z",
+  "category": "vital_sign",
+  "severity": "high",
+  "title": "High Post-Prandial Blood Glucose ~231 mg/dL (12.8 mmol/L)",
+  "description": "Post-prandial glucose 12.8 mmol/L (~231 mg/dL) significantly exceeds target of <180 mg/dL. Highest glucose reading recorded. Rising trend: 168\u2192195\u2192182\u2192231 mg/dL across the two-day monitoring period.",
+  "related_data": [
+    {
+      "type": "blood_glucose",
+      "value": 231,
+      "unit": "mg/dL",
+      "original": "12.8 mmol/L",
+      "context": "post_meal"
+    }
+  ],
+  "clinical_context": "Severe post-prandial hyperglycemia in T2DM patient on Metformin monotherapy. Consider adding second-line agent (SGLT2i, GLP-1 RA, or sulfonylurea)."
+}

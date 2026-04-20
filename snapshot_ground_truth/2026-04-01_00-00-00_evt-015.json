@@ -1,0 +1,15 @@
+{
+  "event_id": "evt-015",
+  "datetime": "2026-04-01T00:00:00",
+  "event_title": "Complete Blood Count (CBC) Report",
+  "most_recent_vitals": {},
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Clinical document: Complete Blood Count (CBC) Report. Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "No immediate attention items."
+  ]
+}

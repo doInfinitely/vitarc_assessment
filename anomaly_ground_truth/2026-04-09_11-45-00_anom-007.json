@@ -1,0 +1,24 @@
+{
+  "anomaly_id": "anom-007",
+  "event_id": "evt-027",
+  "datetime": "2026-04-09T11:45:00Z",
+  "category": "medication",
+  "severity": "moderate",
+  "title": "Morning Medications Taken 3h45m Late",
+  "description": "Amlodipine 10mg, Losartan 100mg, and Metformin 1000mg taken at 11:45 instead of scheduled 08:00 \u2014 225 minutes late. Patient notes 'Forgot to take at 8am, took late'. Delay in antihypertensives may contribute to elevated BP readings.",
+  "related_data": [
+    {
+      "type": "medication_taken",
+      "medications": [
+        "Amlodipine 10mg",
+        "Losartan 100mg",
+        "Metformin 1000mg"
+      ]
+    },
+    {
+      "type": "note",
+      "value": "Scheduled time: 08:00, taken: 11:45, delay: 225 minutes"
+    }
+  ],
+  "clinical_context": "Late antihypertensive dosing reduces 24h coverage. Given rising BP trend, medication timing is clinically significant."
+}

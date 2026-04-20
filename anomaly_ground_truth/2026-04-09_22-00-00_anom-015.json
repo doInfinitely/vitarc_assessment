@@ -1,0 +1,22 @@
+{
+  "anomaly_id": "anom-015",
+  "event_id": "evt-032",
+  "datetime": "2026-04-09T22:00:00Z",
+  "category": "medication",
+  "severity": "low",
+  "title": "Missing Atorvastatin Dose (Day 2)",
+  "description": "No record of Atorvastatin 20mg taken on April 9 (scheduled 22:00). On April 8, Atorvastatin was taken at 22:05. Evening Metformin was taken at 20:30 but statin dose appears missed.",
+  "related_data": [
+    {
+      "type": "medication_schedule",
+      "medication": "Atorvastatin 20mg",
+      "scheduled": "22:00"
+    },
+    {
+      "type": "medication_taken",
+      "when": "2026-04-08T22:05:00Z",
+      "note": "Taken on Day 1"
+    }
+  ],
+  "clinical_context": "Single missed statin dose has minimal immediate impact but pattern should be monitored. Patient may have been preoccupied with hypertensive symptoms."
+}

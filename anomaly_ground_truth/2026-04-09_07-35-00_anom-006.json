@@ -1,0 +1,23 @@
+{
+  "anomaly_id": "anom-006",
+  "event_id": "evt-025",
+  "datetime": "2026-04-09T07:35:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Fasting Blood Glucose 182 mg/dL (Rising Trend)",
+  "description": "Fasting glucose 182 mg/dL, rising from 168 mg/dL yesterday. Well above target of <130 mg/dL. Indicates worsening glycemic control.",
+  "related_data": [
+    {
+      "type": "blood_glucose",
+      "value": 182,
+      "context": "fasting"
+    },
+    {
+      "type": "blood_glucose",
+      "value": 168,
+      "context": "fasting",
+      "when": "2026-04-08T07:50:00Z"
+    }
+  ],
+  "clinical_context": "Rising fasting glucose (168\u2192182) over 24h suggests inadequate overnight control. Metformin 1000mg BID may need augmentation."
+}

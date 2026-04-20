@@ -1,0 +1,23 @@
+{
+  "anomaly_id": "anom-004",
+  "event_id": "evt-023",
+  "datetime": "2026-04-08T23:30:00Z",
+  "category": "symptom",
+  "severity": "low",
+  "title": "Mild Headache at Bedtime",
+  "description": "Patient reports mild headache (severity 3/10) at bedtime, took paracetamol. May be tension headache or related to elevated BP earlier in day (142/88). Evening BP had improved to 134/82.",
+  "related_data": [
+    {
+      "type": "symptom",
+      "symptom": "mild_headache",
+      "severity": 3
+    },
+    {
+      "type": "blood_pressure",
+      "value": "134/82",
+      "context": "evening",
+      "when": "2026-04-08T18:00:00Z"
+    }
+  ],
+  "clinical_context": "Headache in hypertensive patient warrants monitoring. Evening BP 134/82 improved from morning 142/88."
+}

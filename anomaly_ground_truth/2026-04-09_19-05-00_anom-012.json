@@ -1,0 +1,27 @@
+{
+  "anomaly_id": "anom-012",
+  "event_id": "evt-031",
+  "datetime": "2026-04-09T19:05:00Z",
+  "category": "symptom",
+  "severity": "moderate",
+  "title": "Chest Tightness with Hypertensive Urgency",
+  "description": "Patient reports chest tightness (severity 4/10), notes 'might be anxiety'. In context of BP 171/101 and resting HR 91-104 bpm, chest tightness may indicate cardiac strain. Patient has known LVH and mild cardiomegaly.",
+  "related_data": [
+    {
+      "type": "symptom",
+      "symptom": "chest_tightness",
+      "severity": 4
+    },
+    {
+      "type": "blood_pressure",
+      "value": "171/101",
+      "when": "2026-04-09T19:00:00Z"
+    },
+    {
+      "type": "heart_rate",
+      "range": "91-104 bpm",
+      "when": "2026-04-09 evening"
+    }
+  ],
+  "clinical_context": "Chest tightness in patient with HTN crisis, LVH, and cardiomegaly requires cardiac workup to rule out ACS. NSAIDs contraindicated (allergy: bronchospasm)."
+}

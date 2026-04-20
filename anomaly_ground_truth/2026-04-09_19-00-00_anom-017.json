@@ -1,0 +1,40 @@
+{
+  "anomaly_id": "anom-017",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "correlation",
+  "severity": "critical",
+  "title": "Multi-Signal Alert: BP 171/101 + HR 91-104 + Dizziness + Chest Tightness + Declining HRV",
+  "description": "Convergence of multiple concerning signals: (1) Hypertensive urgency BP 171/101, (2) Sustained resting tachycardia 91-104 bpm, (3) Dizziness severity 6/10, (4) Chest tightness severity 4/10, (5) HRV declined to 25 ms, (6) Post-prandial glucose 231 mg/dL. In patient with known LVH, mild cardiomegaly, and early diabetic nephropathy.",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "171/101"
+    },
+    {
+      "type": "heart_rate",
+      "range": "91-104 bpm"
+    },
+    {
+      "type": "symptom",
+      "symptom": "dizziness",
+      "severity": 6
+    },
+    {
+      "type": "symptom",
+      "symptom": "chest_tightness",
+      "severity": 4
+    },
+    {
+      "type": "hrv",
+      "value": 25,
+      "unit": "ms"
+    },
+    {
+      "type": "blood_glucose",
+      "value": 231,
+      "unit": "mg/dL"
+    }
+  ],
+  "clinical_context": "Multi-system decompensation in patient with hypertensive heart disease, T2DM, and asthma. Immediate clinical evaluation recommended. NSAIDs contraindicated. Consider ER for end-organ damage assessment (ECG, troponin, renal function, urinalysis for proteinuria)."
+}

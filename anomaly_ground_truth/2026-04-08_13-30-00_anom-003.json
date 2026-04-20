@@ -1,0 +1,19 @@
+{
+  "anomaly_id": "anom-003",
+  "event_id": "evt-019",
+  "datetime": "2026-04-08T13:30:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Post-Prandial Blood Glucose 195 mg/dL",
+  "description": "Post-prandial glucose 195 mg/dL exceeds target of <180 mg/dL. Patient notes 'Had kabsa for lunch' \u2014 high-carbohydrate meal likely contributed.",
+  "related_data": [
+    {
+      "type": "blood_glucose",
+      "value": 195,
+      "unit": "mg/dL",
+      "context": "post_meal",
+      "notes": "Had kabsa for lunch"
+    }
+  ],
+  "clinical_context": "ADA recommends post-prandial glucose <180 mg/dL. Dietary counseling may be beneficial."
+}

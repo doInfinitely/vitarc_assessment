@@ -1,0 +1,33 @@
+{
+  "anomaly_id": "anom-011",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "vital_sign",
+  "severity": "critical",
+  "title": "Hypertensive Urgency \u2014 BP 171/101 mmHg",
+  "description": "BP 171/101 mmHg with symptoms (dizziness, chest tightness). Represents a rising trend: 134\u2192142\u2192148\u2192162\u2192171 systolic over 36 hours. Patient asks 'Should I go to ER?' \u2014 clinical evaluation strongly recommended.",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "171/101",
+      "context": "evening"
+    },
+    {
+      "type": "symptom",
+      "symptom": "dizziness",
+      "severity": 6
+    },
+    {
+      "type": "trend",
+      "values": [
+        134,
+        142,
+        148,
+        162,
+        171
+      ],
+      "parameter": "systolic_bp"
+    }
+  ],
+  "clinical_context": "Hypertensive urgency (SBP \u2265160 with symptoms) in patient with known LVH, cardiomegaly, and early nephropathy. ER evaluation recommended for end-organ assessment."
+}

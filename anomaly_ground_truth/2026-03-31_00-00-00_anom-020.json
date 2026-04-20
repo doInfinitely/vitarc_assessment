@@ -1,0 +1,22 @@
+{
+  "anomaly_id": "anom-020",
+  "event_id": "evt-014",
+  "datetime": "2026-03-31T00:00:00",
+  "category": "document",
+  "severity": "low",
+  "title": "Chest X-Ray: Mild Cardiomegaly Progression (CTR 0.52\u21920.54)",
+  "description": "Chest X-ray shows mild cardiomegaly with cardiothoracic ratio 0.54, increased from 0.52 on prior study. Left ventricular configuration. Mild aortic unfolding consistent with age and hypertension. Lungs are clear.",
+  "related_data": [
+    {
+      "type": "xray_finding",
+      "finding": "Cardiomegaly",
+      "CTR": 0.54,
+      "prior_CTR": 0.52
+    },
+    {
+      "type": "xray_finding",
+      "finding": "Mild aortic unfolding"
+    }
+  ],
+  "clinical_context": "Progressive cardiomegaly correlates with echo findings of LVH. Subtle worsening suggests suboptimal BP control over time."
+}

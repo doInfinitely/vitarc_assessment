@@ -1,0 +1,18 @@
+{
+  "anomaly_id": "anom-002",
+  "event_id": "evt-017",
+  "datetime": "2026-04-08T07:50:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Fasting Blood Glucose 168 mg/dL",
+  "description": "Fasting glucose 168 mg/dL significantly above target of <130 mg/dL for T2DM management. Indicates inadequate overnight glycemic control.",
+  "related_data": [
+    {
+      "type": "blood_glucose",
+      "value": 168,
+      "unit": "mg/dL",
+      "context": "fasting"
+    }
+  ],
+  "clinical_context": "Patient has T2DM with hyperglycemia (E11.65), on Metformin 1000mg BID. ADA target fasting glucose is 80-130 mg/dL."
+}

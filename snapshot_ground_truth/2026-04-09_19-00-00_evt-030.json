@@ -1,0 +1,114 @@
+{
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "event_title": "Blood Pressure: 171/101 mmHg",
+  "most_recent_vitals": {
+    "blood_pressure": {
+      "value": "171/101",
+      "systolic": 171,
+      "diastolic": 101,
+      "unit": "mmHg",
+      "when": "2026-04-09T19:00:00Z",
+      "how": "manual_entry"
+    },
+    "blood_glucose": {
+      "value": 230.6,
+      "unit": "mg/dL",
+      "when": "2026-04-09T11:00:00Z",
+      "how": "manual_entry"
+    },
+    "heart_rate": {
+      "value": 93,
+      "unit": "bpm",
+      "when": "2026-04-09T18:55:09Z",
+      "how": "Apple Watch"
+    },
+    "spo2": {
+      "value": 0.95,
+      "unit": "%",
+      "when": "2026-04-09T18:07:00Z",
+      "how": "Apple Watch"
+    }
+  },
+  "medication_adherence_48h": {
+    "summary": "Partially adherent",
+    "details": [
+      {
+        "medication": "Amlodipine 10mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Losartan 100mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T20:15:00Z",
+        "scheduled": "20:00",
+        "delay_minutes": 15,
+        "status": "on_time"
+      },
+      {
+        "medication": "Atorvastatin 20mg",
+        "taken_at": "2026-04-08T22:05:00Z",
+        "scheduled": "22:00",
+        "delay_minutes": 5,
+        "status": "on_time"
+      },
+      {
+        "medication": "Amlodipine 10mg",
+        "taken_at": "2026-04-09T11:45:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 225,
+        "status": "late"
+      },
+      {
+        "medication": "Losartan 100mg",
+        "taken_at": "2026-04-09T11:45:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 225,
+        "status": "late"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-09T11:45:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 225,
+        "status": "late"
+      }
+    ]
+  },
+  "reported_symptoms": [
+    {
+      "symptom": "mild headache",
+      "severity": 3,
+      "when": "2026-04-08T23:30:00Z",
+      "notes": "Slight headache, took paracetamol"
+    },
+    {
+      "symptom": "dizziness",
+      "severity": 6,
+      "when": "2026-04-09T16:35:00Z",
+      "notes": "Started around 3pm, getting worse"
+    }
+  ],
+  "clinical_findings_summary": "Patient-reported: Blood Pressure: 171/101 mmHg. HIGH: BP 171/101 \u2014 hypertensive urgency. HIGH: Blood glucose 230.6 mg/dL \u2014 hyperglycemia. Active symptoms: mild headache (3/10), dizziness (6/10). Medication adherence: Partially adherent.",
+  "care_team_attention": [
+    "Hypertensive urgency \u2014 contact physician, consider ER evaluation.",
+    "Significant hyperglycemia \u2014 review diabetes management plan.",
+    "Patient reporting dizziness (severity 6/10) \u2014 assess and manage."
+  ]
+}

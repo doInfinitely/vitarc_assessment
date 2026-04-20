@@ -1,0 +1,23 @@
+{
+  "anomaly_id": "anom-013",
+  "event_id": "evt-031",
+  "datetime": "2026-04-09T15:00:00Z",
+  "category": "vital_sign",
+  "severity": "high",
+  "title": "Sustained Elevated Resting Heart Rate 91-104 bpm",
+  "description": "Apple Watch records show sustained resting HR 91-104 bpm throughout the evening of April 9 (15:00-23:55 UTC), well above expected resting range of 60-80 bpm. Likely reflects sympathetic activation from pain, anxiety, and hypertensive crisis.",
+  "related_data": [
+    {
+      "type": "heart_rate",
+      "range": "91-104 bpm",
+      "duration": "~9 hours",
+      "source": "Apple Watch"
+    },
+    {
+      "type": "blood_pressure",
+      "value": "171/101",
+      "when": "2026-04-09T19:00:00Z"
+    }
+  ],
+  "clinical_context": "Resting tachycardia in hypertensive patient with LVH increases myocardial oxygen demand. Combined with chest tightness, warrants cardiac monitoring."
+}

@@ -1,0 +1,38 @@
+{
+  "anomaly_id": "anom-016",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "trend",
+  "severity": "high",
+  "title": "Rising Blood Pressure Trend: 134\u2192142\u2192148\u2192162\u2192171 Systolic",
+  "description": "Systolic BP has risen from 134 to 171 mmHg over 36 hours across 5 readings. Diastolic also trending up: 82\u219288\u219292\u219298\u2192101. Consistent upward trajectory despite antihypertensive therapy indicates treatment failure or non-compliance (medications taken 3h45m late on Day 2).",
+  "related_data": [
+    {
+      "type": "trend",
+      "parameter": "systolic_bp",
+      "values": [
+        {
+          "value": 134,
+          "when": "2026-04-08T18:00:00Z"
+        },
+        {
+          "value": 142,
+          "when": "2026-04-08T07:45:00Z"
+        },
+        {
+          "value": 148,
+          "when": "2026-04-09T07:30:00Z"
+        },
+        {
+          "value": 162,
+          "when": "2026-04-09T16:30:00Z"
+        },
+        {
+          "value": 171,
+          "when": "2026-04-09T19:00:00Z"
+        }
+      ]
+    }
+  ],
+  "clinical_context": "Progressive BP elevation despite dual antihypertensive therapy. Late medication dosing and poor sleep are contributing factors. Regimen reassessment needed."
+}

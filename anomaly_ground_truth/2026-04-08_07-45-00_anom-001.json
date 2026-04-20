@@ -1,0 +1,17 @@
+{
+  "anomaly_id": "anom-001",
+  "event_id": "evt-016",
+  "datetime": "2026-04-08T07:45:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Morning Blood Pressure 142/88 mmHg",
+  "description": "Morning fasting BP 142/88 mmHg exceeds target of <130/80 for patient with HTN + diabetes. Stage 2 hypertension range despite dual antihypertensive therapy (Amlodipine 10mg + Losartan 100mg).",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "142/88",
+      "context": "morning_fasting"
+    }
+  ],
+  "clinical_context": "Patient has Stage 2 Essential Hypertension diagnosed 2016, currently on Amlodipine 10mg + Losartan 100mg daily. Target BP for diabetic patient is <130/80 mmHg per guidelines."
+}
