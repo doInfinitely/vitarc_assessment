@@ -1,0 +1,71 @@
+{
+  "event_id": "evt-021",
+  "datetime": "2026-04-08T20:15:00Z",
+  "event_title": "Medication Taken: Metformin 1000mg",
+  "most_recent_vitals": {
+    "blood_pressure": {
+      "value": "134/82",
+      "systolic": 134,
+      "diastolic": 82,
+      "unit": "mmHg",
+      "when": "2026-04-08T18:00:00Z",
+      "how": "manual_entry"
+    },
+    "blood_glucose": {
+      "value": 195,
+      "unit": "mg/dL",
+      "when": "2026-04-08T13:30:00Z",
+      "how": "manual_entry"
+    },
+    "heart_rate": {
+      "value": 74,
+      "unit": "bpm",
+      "when": "2026-04-08T20:10:06Z",
+      "how": "Apple Watch"
+    },
+    "spo2": {
+      "value": 0.97,
+      "unit": "%",
+      "when": "2026-04-08T19:30:00Z",
+      "how": "Apple Watch"
+    }
+  },
+  "medication_adherence_48h": {
+    "summary": "Fully adherent",
+    "details": [
+      {
+        "medication": "Amlodipine 10mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Losartan 100mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T20:15:00Z",
+        "scheduled": "20:00",
+        "delay_minutes": 15,
+        "status": "on_time"
+      }
+    ]
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Patient-reported: Medication Taken: Metformin 1000mg. HIGH: Blood glucose 195 mg/dL \u2014 hyperglycemia.",
+  "care_team_attention": [
+    "Blood glucose above post-prandial target \u2014 consider medication adjustment."
+  ]
+}

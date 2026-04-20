@@ -17,6 +17,7 @@ WEARABLE_PATH = os.path.join(DATA_DIR, "wearable_export (1).xml")
 
 SNAPSHOT_DIR = os.path.join(BASE_DIR, "snapshot_ground_truth")
 ANOMALY_DIR = os.path.join(BASE_DIR, "anomaly_ground_truth")
+ANOMALY_PROG_DIR = os.path.join(BASE_DIR, "anomaly_programmatic")
 VIEWER_DIR = os.path.join(BASE_DIR, "timeline_viewer")
 TIMELINE_PATH = os.path.join(BASE_DIR, "timeline.json")
 
@@ -1195,6 +1196,14 @@ canvas#wearable {{ width: 100%; height: 100%; display: block; }}
 .anomaly-card.low .sev {{ color: #44aa44; }}
 .anomaly-card .a-title {{ font-weight: 600; color: #fff; margin-bottom: 4px; }}
 .anomaly-card .a-desc {{ color: #aab; line-height: 1.4; }}
+.source-badge {{ display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }}
+.source-badge.ground_truth {{ background: #5a4a00; color: #ffd700; }}
+.source-badge.programmatic {{ background: #1a3a5a; color: #4ea8de; }}
+.source-badge.both {{ background: #1a3a1a; color: #69db7c; }}
+#anomaly-source-filter {{ display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }}
+#anomaly-source-filter button {{ font-size: 11px; padding: 4px 10px; border-radius: 4px; border: 1px solid #333650; background: #22253a; color: #8890a0; cursor: pointer; }}
+#anomaly-source-filter button:hover {{ background: #2a2d45; }}
+#anomaly-source-filter button.active {{ background: #3a3d55; color: #fff; border-color: #5a5d7a; }}
 .sb-finding {{ font-size: 13px; color: #aab; padding: 4px 0; }}
 .sb-clinical {{ font-size: 13px; color: #aab; line-height: 1.5; padding: 8px; background: #171922; border-radius: 4px; }}
 </style>
@@ -1697,9 +1706,20 @@ function selectEvent(evt) {{
   // Anomalies
   if (anoms.length > 0) {{
     html += '<div class="sb-section open"><h3 onclick="this.parentElement.classList.toggle(\\'open\\')">Anomalies (' + anoms.length + ')</h3><div class="sb-body">';
+    // Source filter buttons
+    const sources = [...new Set(anoms.map(a => a.source || 'ground_truth'))];
+    if (sources.length > 1 || sources[0] !== 'ground_truth') {{
+      html += '<div id="anomaly-source-filter">';
+      html += '<button class="active" onclick="filterAnomalies(\\'all\\')">All</button>';
+      html += '<button onclick="filterAnomalies(\\'ground_truth\\')">Ground Truth</button>';
+      html += '<button onclick="filterAnomalies(\\'programmatic\\')">Programmatic</button>';
+      html += '<button onclick="filterAnomalies(\\'both\\')">Both</button>';
+      html += '</div>';
+    }}
     anoms.forEach(a => {{
-      html += '<div class="anomaly-card ' + esc(a.severity) + '">';
-      html += '<div class="sev">' + esc(a.severity) + '</div>';
+      const src = a.source || 'ground_truth';
+      html += '<div class="anomaly-card ' + esc(a.severity) + '" data-source="' + esc(src) + '">';
+      html += '<div class="sev">' + esc(a.severity) + ' <span class="source-badge ' + esc(src) + '">' + esc(src === 'both' ? 'GT+Prog' : src === 'ground_truth' ? 'GT' : 'Prog') + '</span></div>';
       html += '<div class="a-title">' + esc(a.title) + '</div>';
       html += '<div class="a-desc">' + esc(a.description) + '</div>';
       html += '</div>';
@@ -1709,6 +1729,15 @@ function selectEvent(evt) {{
 
   content.innerHTML = html;
   draw();
+}}
+
+function filterAnomalies(source) {{
+  document.querySelectorAll('#anomaly-source-filter button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.anomaly-card[data-source]').forEach(card => {{
+    if (source === 'all') card.style.display = '';
+    else card.style.display = card.dataset.source === source ? '' : 'none';
+  }});
 }}
 
 function esc(s) {{ if (s == null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }}
@@ -1771,9 +1800,38 @@ def main():
             json.dump(anom, f, indent=2, default=str)
     print(f"  Wrote {len(anomalies)} anomaly files to {ANOMALY_DIR}/")
 
+    # Load programmatic anomalies and merge with ground truth
+    print("Merging anomaly sources...")
+    prog_anomalies = []
+    if os.path.exists(ANOMALY_PROG_DIR):
+        for fname in sorted(os.listdir(ANOMALY_PROG_DIR)):
+            if fname.endswith(".json"):
+                with open(os.path.join(ANOMALY_PROG_DIR, fname)) as f:
+                    prog_anomalies.append(json.load(f))
+
+    # Determine source for each anomaly
+    gt_keys = {(a["event_id"], a["category"]) for a in anomalies}
+    prog_keys = {(a["event_id"], a["category"]) for a in prog_anomalies}
+    both_keys = gt_keys & prog_keys
+
+    for a in anomalies:
+        key = (a["event_id"], a["category"])
+        a["source"] = "both" if key in both_keys else "ground_truth"
+
+    # Add programmatic-only anomalies
+    merged_anomalies = list(anomalies)
+    for a in prog_anomalies:
+        key = (a["event_id"], a["category"])
+        if key not in gt_keys:
+            a["source"] = "programmatic"
+            merged_anomalies.append(a)
+
+    print(f"  Ground truth: {len(anomalies)}, Programmatic: {len(prog_anomalies)}, "
+          f"Both: {len(both_keys)}, Merged: {len(merged_anomalies)}")
+
     # Generate viewer
     print("Generating timeline viewer...")
-    html = generate_viewer_html(timeline, snapshots, anomalies)
+    html = generate_viewer_html(timeline, snapshots, merged_anomalies)
     viewer_path = os.path.join(VIEWER_DIR, "index.html")
     with open(viewer_path, "w") as f:
         f.write(html)
@@ -1788,7 +1846,7 @@ def main():
           f"Sleep={len(timeline['wearable_data']['sleep'])}, "
           f"HRV={len(timeline['wearable_data']['hrv'])}")
     print(f"Snapshots: {len(snapshots)}")
-    print(f"Anomalies: {len(anomalies)}")
+    print(f"Anomalies: {len(merged_anomalies)} (GT: {len(anomalies)}, Prog: {len(prog_anomalies)})")
     print(f"\nOpen {viewer_path} in a browser to view the timeline.")
 
 

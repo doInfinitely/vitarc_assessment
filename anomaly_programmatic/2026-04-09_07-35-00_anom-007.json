@@ -1,0 +1,18 @@
+{
+  "anomaly_id": "anom-007",
+  "event_id": "evt-025",
+  "datetime": "2026-04-09T07:35:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Fasting Blood Glucose 182 mg/dL",
+  "description": "Blood glucose 182 mg/dL (fasting) above target of <130 mg/dL.",
+  "related_data": [
+    {
+      "type": "blood_glucose",
+      "value": 182,
+      "unit": "mg/dL",
+      "context": "fasting"
+    }
+  ],
+  "clinical_context": "Patient has T2DM with hyperglycemia, on Metformin 1000mg BID. ADA target fasting glucose is 80-130 mg/dL, post-prandial <180 mg/dL."
+}

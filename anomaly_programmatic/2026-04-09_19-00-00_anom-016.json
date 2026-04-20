@@ -1,0 +1,38 @@
+{
+  "anomaly_id": "anom-016",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "trend",
+  "severity": "high",
+  "title": "Rising Blood Pressure Trend: 142\u2192134\u2192148\u2192162\u2192171 Systolic",
+  "description": "Systolic BP has risen from 142 to 171 mmHg across 5 readings. Consistent upward trajectory despite antihypertensive therapy.",
+  "related_data": [
+    {
+      "type": "trend",
+      "parameter": "systolic_bp",
+      "values": [
+        {
+          "value": 142,
+          "when": "2026-04-08T07:45:00Z"
+        },
+        {
+          "value": 134,
+          "when": "2026-04-08T18:00:00Z"
+        },
+        {
+          "value": 148,
+          "when": "2026-04-09T07:30:00Z"
+        },
+        {
+          "value": 162,
+          "when": "2026-04-09T16:30:00Z"
+        },
+        {
+          "value": 171,
+          "when": "2026-04-09T19:00:00Z"
+        }
+      ]
+    }
+  ],
+  "clinical_context": "Progressive BP elevation despite dual antihypertensive therapy. Regimen reassessment needed."
+}

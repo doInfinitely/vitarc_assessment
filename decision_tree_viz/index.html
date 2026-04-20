@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Decision Tree Visualizations — Anomaly Detectors</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e0e0e0; padding: 20px; }
+h1 { text-align: center; margin-bottom: 8px; color: #fff; }
+.subtitle { text-align: center; color: #8890a0; margin-bottom: 24px; font-size: 14px; }
+.tree-container { margin: 16px 0; background: #1a1d27; border-radius: 8px; border: 1px solid #2a2d3a; overflow: hidden; }
+.tree-header { padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #22253a; }
+.tree-header:hover { background: #2a2d45; }
+.tree-header h2 { font-size: 16px; color: #fff; }
+.tree-header .stats { font-size: 13px; color: #8890a0; }
+.tree-body { display: none; padding: 16px; }
+.tree-container.open .tree-body { display: block; }
+.tree-container.open .tree-header .arrow { transform: rotate(90deg); }
+.arrow { transition: transform 0.2s; color: #8890a0; }
+.node { margin: 4px 0 4px 24px; padding: 8px 12px; border-radius: 6px; font-size: 13px; border-left: 3px solid #333; }
+.node.condition { background: #1e2030; border-left-color: #4ecdc4; }
+.node.leaf { border-left-color: transparent; font-weight: 600; }
+.node.leaf.critical { background: #3a1a1a; border: 1px solid #ff4444; color: #ff4444; }
+.node.leaf.high { background: #3a2a1a; border: 1px solid #ff8800; color: #ff8800; }
+.node.leaf.moderate { background: #2a2a1a; border: 1px solid #ffaa00; color: #ffaa00; }
+.node.leaf.low { background: #1a2a1a; border: 1px solid #44aa44; color: #44aa44; }
+.branch-label { font-size: 11px; color: #667; margin-left: 24px; font-style: italic; }
+.detection-list { margin-top: 12px; padding-top: 12px; border-top: 1px solid #2a2d3a; }
+.detection-item { padding: 6px 8px; margin: 4px 0; border-radius: 4px; font-size: 12px; }
+.detection-item.critical { background: #3a1a1a; border-left: 3px solid #ff4444; }
+.detection-item.high { background: #3a2a1a; border-left: 3px solid #ff8800; }
+.detection-item.moderate { background: #2a2a1a; border-left: 3px solid #ffaa00; }
+.detection-item.low { background: #1a2a1a; border-left: 3px solid #44aa44; }
+.grade-summary { background: #22253a; padding: 16px; border-radius: 8px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+.grade-item { text-align: center; }
+.grade-item .value { font-size: 24px; font-weight: 700; color: #fff; }
+.grade-item .label { font-size: 12px; color: #8890a0; }
+</style>
+</head>
+<body>
+<h1>Anomaly Detection Decision Trees</h1>
+<div class="subtitle">Programmatic detection using rule-based decision trees</div>
+
+<div class="grade-summary">
+  <div class="grade-item"><div class="value">20</div><div class="label">True Positives</div></div>
+  <div class="grade-item"><div class="value">0</div><div class="label">False Positives</div></div>
+  <div class="grade-item"><div class="value">0</div><div class="label">False Negatives</div></div>
+  <div class="grade-item"><div class="value">100%</div><div class="label">Precision</div></div>
+  <div class="grade-item"><div class="value">100%</div><div class="label">Recall</div></div>
+  <div class="grade-item"><div class="value">100%</div><div class="label">F1 Score</div></div>
+</div>
+
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 1. Blood Pressure Detector</h2>
+    <span class="stats">5 detections</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">IF event has BP reading:</div>
+  <div class="branch-label">systolic &ge; 170 AND concurrent symptoms?</div>
+  <div class="node leaf critical">→ CRITICAL: "Hypertensive Urgency"</div>
+  <div class="branch-label">systolic &ge; 160 AND concurrent symptoms?</div>
+  <div class="node leaf high">→ HIGH: "Severely Elevated BP with Symptoms"</div>
+  <div class="branch-label">systolic &ge; 160?</div>
+  <div class="node leaf high">→ HIGH: "Severely Elevated BP"</div>
+  <div class="branch-label">systolic &ge; 140?</div>
+  <div class="node leaf moderate">→ MODERATE: "Elevated BP"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item moderate">anom-001: Elevated Morning Blood Pressure 142/88 mmHg</div><div class="detection-item moderate">anom-002: Elevated Morning Blood Pressure 148/92 mmHg (Rising Trend)</div><div class="detection-item high">anom-014: Sustained Elevated Resting Heart Rate 90-104 bpm</div><div class="detection-item high">anom-003: Blood Pressure 162/98 mmHg with Symptoms</div><div class="detection-item critical">anom-004: Hypertensive Urgency — BP 171/101 mmHg</div></div></div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 2. Glucose Detector</h2>
+    <span class="stats">4 detections</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">IF event has glucose reading:</div>
+  <div class="node condition" style="margin-left:40px;">IF fasting (time &lt; 10:00 or context=fasting):</div>
+    <div class="branch-label" style="margin-left:40px;">glucose &ge; 200?</div>
+    <div class="node leaf high" style="margin-left:56px;">→ HIGH: "High Fasting Glucose"</div>
+    <div class="branch-label" style="margin-left:40px;">glucose &ge; 130?</div>
+    <div class="node leaf moderate" style="margin-left:56px;">→ MODERATE: "Elevated Fasting Glucose"</div>
+  <div class="node condition" style="margin-left:40px;">IF post-prandial (context=post_meal or 12:00-16:00):</div>
+    <div class="branch-label" style="margin-left:40px;">glucose &ge; 200?</div>
+    <div class="node leaf high" style="margin-left:56px;">→ HIGH: "High Post-prandial Glucose"</div>
+    <div class="branch-label" style="margin-left:40px;">glucose &ge; 180?</div>
+    <div class="node leaf moderate" style="margin-left:56px;">→ MODERATE: "Elevated Post-prandial Glucose"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item moderate">anom-005: Elevated Fasting Blood Glucose 168 mg/dL</div><div class="detection-item moderate">anom-006: Elevated Post-Prandial Blood Glucose 195 mg/dL</div><div class="detection-item moderate">anom-007: Elevated Fasting Blood Glucose 182 mg/dL</div><div class="detection-item high">anom-008: High Post-Prandial Blood Glucose ~230 mg/dL (12.8 mmol/L)</div></div></div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 3. Symptom Detector</h2>
+    <span class="stats">3 detections</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">IF event is symptom report:</div>
+  <div class="branch-label">severity &ge; 5?</div>
+  <div class="node leaf moderate">→ MODERATE: symptom name + severity</div>
+  <div class="branch-label">concurrent high BP (&ge;160) or vital abnormality?</div>
+  <div class="node leaf moderate">→ MODERATE: symptom + "with Hypertensive Urgency"</div>
+  <div class="branch-label">symptom is headache/fatigue?</div>
+  <div class="node leaf low">→ LOW: "Mild" + symptom</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item low">anom-009: Mild Mild Headache at Bedtime</div><div class="detection-item moderate">anom-010: Dizziness Severity 6/10</div><div class="detection-item moderate">anom-011: Chest Tightness with Hypertensive Urgency</div></div></div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 4. Medication Detector</h2>
+    <span class="stats">2 detections</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">IF event is medication_taken:</div>
+  <div class="node condition" style="margin-left:40px;">delay = taken_time - scheduled_time</div>
+  <div class="branch-label">delay &ge; 120 minutes?</div>
+  <div class="node leaf moderate">→ MODERATE: "Medications significantly late"</div>
+<div class="node condition">End-of-day check:</div>
+  <div class="branch-label">prescribed medication has no taken record for today?</div>
+  <div class="node leaf low">→ LOW: "Missed dose"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item moderate">anom-012: Morning Medications Taken 3h45m Late</div><div class="detection-item low">anom-013: Missing Atorvastatin Dose (Day 2)</div></div></div></div>
+<div class="tree-container">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 5. Heart Rate Detector (Wearable)</h2>
+    <span class="stats">0 detections</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">Scan HR readings from wearable:</div>
+  <div class="branch-label">count of readings &ge; 90 bpm sustained for &ge; 2 hours?</div>
+  <div class="node leaf high">→ HIGH: "Sustained Elevated Resting HR"</div>
+
+</div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 6. HRV Detector (Wearable)</h2>
+    <span class="stats">1 detection</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">IF latest HRV reading available:</div>
+  <div class="branch-label">HRV &le; 30 ms?</div>
+  <div class="node leaf moderate">→ MODERATE: "Low HRV - Sympathetic Overdrive"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item moderate">anom-015: Low Heart Rate Variability 25 ms (Sympathetic Overdrive)</div></div></div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 7. BP Trend Detector</h2>
+    <span class="stats">1 detection</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">Collect all BP readings chronologically:</div>
+  <div class="branch-label">3+ readings show monotonically rising systolic?</div>
+  <div class="node condition" style="margin-left:40px;">total rise &ge; 20 mmHg?</div>
+  <div class="node leaf high">→ HIGH: "Rising BP Trend"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item high">anom-016: Rising Blood Pressure Trend: 142→134→148→162→171 Systolic</div></div></div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 8. Document Detector</h2>
+    <span class="stats">4 detections</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">Parse document structured_document:</div>
+  <div class="branch-label">"hypertrophy" or "LVH" in echo?</div>
+  <div class="node leaf moderate">→ MODERATE: Echo finding</div>
+  <div class="branch-label">"nephropathy" or elevated RI in renal US?</div>
+  <div class="node leaf moderate">→ MODERATE: Renal finding</div>
+  <div class="branch-label">"cardiomegaly" or CTR &gt; 0.50 in chest XR?</div>
+  <div class="node leaf low">→ LOW: XR finding</div>
+  <div class="branch-label">Hb &lt; 12 or HCT &lt; 36 in CBC?</div>
+  <div class="node leaf low">→ LOW: "Mild Anemia"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item moderate">anom-017: Echocardiogram: Lv Hypertrophy and Diastolic Dysfunction</div><div class="detection-item moderate">anom-018: Renal Ultrasound: Early Diabetic Nephropathy with Elevated Resistive Index</div><div class="detection-item low">anom-019: Chest X-Ray: Mild Cardiomegaly Progression (CTR 0.52→0.54)</div><div class="detection-item low">anom-020: CBC: Mild Anemia (Hb 11.8, HCT 35.2% Below Range)</div></div></div></div>
+<div class="tree-container  open">
+  <div class="tree-header" onclick="this.parentElement.classList.toggle('open')">
+    <h2><span class="arrow">&#9658;</span> 9. Multi-Signal Correlation</h2>
+    <span class="stats">1 detection</span>
+  </div>
+  <div class="tree-body">
+    
+<div class="node condition">At end of each day, collect active anomaly signal types:</div>
+  <div class="branch-label">&ge; 5 different signal types active?</div>
+  <div class="node leaf critical">→ CRITICAL: "Multi-Signal Alert"</div>
+  <div class="branch-label">&ge; 4 signal types?</div>
+  <div class="node leaf high">→ HIGH: "Multi-Signal Alert"</div>
+
+<div class="detection-list"><strong style="font-size:12px;color:#8890a0;">Detections:</strong><div class="detection-item critical">anom-021: Multi-Signal Alert: Elevated Morning Blood Pressur + Blood Pressure 162/98 mmHg wit + Hypertensive Urgency — BP 171/ + Elevated Fasting Blood Glucose + High Post-Prandial Blood Gluco</div></div></div></div>
+<script>
+// Auto-open first tree
+document.querySelector('.tree-container')?.classList.add('open');
+</script>
+</body>
+</html>

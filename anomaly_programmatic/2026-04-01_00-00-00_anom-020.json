@@ -1,0 +1,26 @@
+{
+  "anomaly_id": "anom-020",
+  "event_id": "evt-015",
+  "datetime": "2026-04-01T00:00:00",
+  "category": "document",
+  "severity": "low",
+  "title": "CBC: Mild Anemia (Hb 11.8, HCT 35.2% Below Range)",
+  "description": "Complete blood count shows mild anemia. May be related to early diabetic nephropathy or chronic disease.",
+  "related_data": [
+    {
+      "type": "lab_result",
+      "test": "Hemoglobin",
+      "value": 11.8,
+      "unit": "g/dL",
+      "normal": "12.0-16.0"
+    },
+    {
+      "type": "lab_result",
+      "test": "Hematocrit",
+      "value": 35.2,
+      "unit": "%",
+      "normal": "36.0-46.0"
+    }
+  ],
+  "clinical_context": "Mild anemia in diabetic patient with early nephropathy may represent anemia of CKD."
+}

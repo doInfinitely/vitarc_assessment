@@ -1,0 +1,22 @@
+{
+  "anomaly_id": "anom-002",
+  "event_id": "evt-024",
+  "datetime": "2026-04-09T07:30:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Elevated Morning Blood Pressure 148/92 mmHg (Rising Trend)",
+  "description": "Morning BP 148/92 mmHg exceeds target of <130/80 for patient with HTN + diabetes. Rising from 134/82 previously.",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "148/92",
+      "context": "morning_fasting"
+    },
+    {
+      "type": "blood_pressure",
+      "value": "134/82",
+      "when": "2026-04-08T18:00:00Z"
+    }
+  ],
+  "clinical_context": "Patient has Stage 2 Essential Hypertension, currently on Amlodipine 10mg + Losartan 100mg daily. Target BP for diabetic patient is <130/80 mmHg per guidelines."
+}

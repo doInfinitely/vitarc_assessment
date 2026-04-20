@@ -1,0 +1,19 @@
+{
+  "anomaly_id": "anom-008",
+  "event_id": "evt-026",
+  "datetime": "2026-04-09T11:00:00Z",
+  "category": "vital_sign",
+  "severity": "high",
+  "title": "High Post-Prandial Blood Glucose ~230 mg/dL (12.8 mmol/L)",
+  "description": "Blood glucose 230.6 mg/dL (post-prandial) exceeds target of <180 mg/dL. Rising from 182 mg/dL previously.",
+  "related_data": [
+    {
+      "type": "blood_glucose",
+      "value": 230.6,
+      "unit": "mg/dL",
+      "context": "post_meal",
+      "original": "12.8 mmol/L"
+    }
+  ],
+  "clinical_context": "Patient has T2DM with hyperglycemia, on Metformin 1000mg BID. ADA target fasting glucose is 80-130 mg/dL, post-prandial <180 mg/dL."
+}

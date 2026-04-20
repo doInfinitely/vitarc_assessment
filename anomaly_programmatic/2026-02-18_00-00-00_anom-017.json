@@ -1,0 +1,21 @@
+{
+  "anomaly_id": "anom-017",
+  "event_id": "evt-012",
+  "datetime": "2026-02-18T00:00:00",
+  "category": "document",
+  "severity": "moderate",
+  "title": "Echocardiogram: Lv Hypertrophy and Diastolic Dysfunction",
+  "description": "Echocardiogram shows LV hypertrophy, diastolic dysfunction. Consistent with hypertensive heart disease.",
+  "related_data": [
+    {
+      "type": "echo_finding",
+      "finding": "LV hypertrophy",
+      "LVEF": "58%"
+    },
+    {
+      "type": "echo_finding",
+      "finding": "Grade I diastolic dysfunction"
+    }
+  ],
+  "clinical_context": "LVH is a major cardiovascular risk factor. Indicates end-organ damage from chronic hypertension."
+}

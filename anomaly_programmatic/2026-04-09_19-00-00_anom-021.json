@@ -1,0 +1,45 @@
+{
+  "anomaly_id": "anom-021",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "correlation",
+  "severity": "critical",
+  "title": "Multi-Signal Alert: Elevated Morning Blood Pressur + Blood Pressure 162/98 mmHg wit + Hypertensive Urgency \u2014 BP 171/ + Elevated Fasting Blood Glucose + High Post-Prandial Blood Gluco",
+  "description": "Convergence of multiple concerning signals across 6 categories (bp, glucose, hrv, medication, symptom, trend).",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "171/101"
+    },
+    {
+      "type": "symptom",
+      "symptom": "dizziness",
+      "severity": 6
+    },
+    {
+      "type": "symptom",
+      "symptom": "chest_tightness",
+      "severity": 4
+    },
+    {
+      "type": "hrv",
+      "trend": [
+        72,
+        75,
+        55,
+        63,
+        32,
+        28,
+        25
+      ],
+      "unit": "ms"
+    },
+    {
+      "type": "blood_glucose",
+      "value": 182,
+      "unit": "mg/dL",
+      "context": "fasting"
+    }
+  ],
+  "clinical_context": "Multi-system decompensation. Immediate clinical evaluation recommended."
+}

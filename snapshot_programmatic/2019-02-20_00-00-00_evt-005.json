@@ -1,0 +1,15 @@
+{
+  "event_id": "evt-005",
+  "datetime": "2019-02-20T00:00:00",
+  "event_title": "Metformin 1000mg Started",
+  "most_recent_vitals": {},
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Started Metformin 1000mg for Diabetes. Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "No immediate attention items."
+  ]
+}

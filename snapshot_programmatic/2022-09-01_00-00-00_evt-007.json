@@ -1,0 +1,15 @@
+{
+  "event_id": "evt-007",
+  "datetime": "2022-09-01T00:00:00",
+  "event_title": "Atorvastatin 20mg Started",
+  "most_recent_vitals": {},
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Started Atorvastatin 20mg for Dyslipidemia. Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "No immediate attention items."
+  ]
+}

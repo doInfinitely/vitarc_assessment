@@ -1,0 +1,22 @@
+{
+  "anomaly_id": "anom-010",
+  "event_id": "evt-029",
+  "datetime": "2026-04-09T16:35:00Z",
+  "category": "symptom",
+  "severity": "moderate",
+  "title": "Dizziness Severity 6/10",
+  "description": "Patient reports dizziness severity 6/10. Notes: Started around 3pm, getting worse. Concurrent BP 162/98.",
+  "related_data": [
+    {
+      "type": "symptom",
+      "symptom": "dizziness",
+      "severity": 6
+    },
+    {
+      "type": "blood_pressure",
+      "value": "162/98",
+      "when": "2026-04-09T16:30:00Z"
+    }
+  ],
+  "clinical_context": "Dizziness with significantly elevated BP requires assessment for hypertensive encephalopathy or other end-organ damage."
+}

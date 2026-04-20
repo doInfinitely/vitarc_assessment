@@ -484,3 +484,78 @@ build_timeline.py
 - ✓ 21 anomaly files with appropriate severity levels
 - ✓ Data messiness handled: BP key normalization, glucose unit conversion, empty SpO2 skipped, Fitbit duplicates kept with source tag
 - ✓ Viewer HTML self-contained with embedded data, interactive zoom/pan/filter/sidebar
+
+## Plan 6: Programmatic Snapshot Generation & Anomaly Detection
+
+### Context
+The ground truth snapshots (35 files) and anomalies (21 files) were manually curated with clinical knowledge in `build_timeline.py`. This plan creates a standalone programmatic system that reproduces those results using decision trees — no LLMs.
+
+### Approach: `detect_programmatic.py`
+
+Single script that reads `timeline.json`, runs decision trees to generate snapshots and detect anomalies, grades against ground truth, and generates decision tree visualizations.
+
+#### Part 1: Programmatic Snapshots
+Replicated the exact snapshot generation logic from `build_timeline.py`:
+- `find_most_recent_bp/glucose()` — backward scan through events
+- `find_most_recent_wearable()` — scan wearable tracks
+- `get_medication_adherence_48h()` — 48h window medication matching
+- `get_reported_symptoms()` — 24h window symptom collection
+- `build_clinical_summary()` — threshold-based vital assessment
+- `build_care_team_attention()` — attention items from thresholds
+
+#### Part 2: Anomaly Detection — 9 Decision Tree Detectors
+
+| # | Detector | Input | Thresholds | Anomalies Matched |
+|---|----------|-------|------------|-------------------|
+| 1 | BP | Manual BP entries | ≥170+symptoms→CRITICAL, ≥160+symptoms→HIGH, ≥160→HIGH, ≥140→MODERATE | anom-001,005,009,011 |
+| 2 | Glucose | Manual glucose entries | Fasting ≥200→HIGH, ≥130→MOD; Post-prandial ≥200→HIGH, ≥180→MOD | anom-002,003,006,008 |
+| 3 | Symptom | Symptom reports | sev≥5→MOD, concurrent high BP→MOD, headache/fatigue→LOW | anom-004,010,012 |
+| 4 | Medication | Med-taken events | delay≥120min→MOD; Missing dose→LOW | anom-007,015 |
+| 5 | Heart Rate | Wearable HR track | Dense cluster ≥90bpm sustained ≥2h→HIGH | anom-013 |
+| 6 | HRV | Wearable HRV track | Latest HRV ≤30ms→MODERATE | anom-014 |
+| 7 | BP Trend | All BP readings | ≥3 rising readings, total rise ≥20mmHg→HIGH | anom-016 |
+| 8 | Document | Structured documents | Keywords: hypertrophy, nephropathy, cardiomegaly, anemia | anom-018,019,020,021 |
+| 9 | Multi-Signal | All anomalies per day | ≥5 signal types→CRITICAL, ≥4→HIGH | anom-017 |
+
+**Key HR detector approach:** Cluster-based detection. First build dense clusters of consecutive readings within 30 min of each other. Then check if >= 75% of readings in the cluster are >= 90 bpm and duration >= 2 hours. Attach anomaly to nearest symptom event.
+
+#### Part 3: Grading System
+Match by `(event_id, category)` tuple. Metrics: Precision, Recall, F1, and severity accuracy for true positives.
+
+#### Part 4: Decision Tree Visualizations
+`decision_tree_viz/index.html` — self-contained HTML with collapsible tree diagrams for each detector, color-coded by severity, showing detection counts.
+
+#### Part 5: Viewer Update
+Modified `build_timeline.py` to:
+- Load both `anomaly_ground_truth/` and `anomaly_programmatic/` anomaly sets
+- Add `source` field: `"ground_truth"`, `"programmatic"`, or `"both"`
+- Source badges in sidebar (gold=GT, blue=Prog, green=Both)
+- Filter toggle buttons: All / Ground Truth / Programmatic / Both
+
+### Files Created/Modified
+
+| File | Action | Purpose |
+|------|--------|---------|
+| `detect_programmatic.py` | Created | Main detection + grading script |
+| `snapshot_programmatic/*.json` | Created | 35 programmatic snapshot files |
+| `anomaly_programmatic/*.json` | Created | 21 programmatic anomaly files |
+| `decision_tree_viz/index.html` | Created | Interactive decision tree visualizations |
+| `build_timeline.py` | Modified | Viewer shows anomaly provenance with source badges + filter |
+
+### Results
+
+```
+Anomaly Detection:
+  True Positives:  20
+  False Positives: 0
+  False Negatives: 0
+  Precision:       100.00%
+  Recall:          100.00%
+  F1 Score:        100.00%
+  Severity Match:  100.00%
+
+Snapshot Comparison:
+  Vitals match:    35/35 (100.0%)
+  Med count match: 35/35 (100.0%)
+  Symptom match:   35/35 (100.0%)
+```

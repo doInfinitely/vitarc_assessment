@@ -1,0 +1,27 @@
+{
+  "anomaly_id": "anom-011",
+  "event_id": "evt-031",
+  "datetime": "2026-04-09T19:05:00Z",
+  "category": "symptom",
+  "severity": "moderate",
+  "title": "Chest Tightness with Hypertensive Urgency",
+  "description": "Patient reports chest tightness (severity 4/10), notes 'Mild tightness, might be anxiety'. In context of BP 171/101.",
+  "related_data": [
+    {
+      "type": "symptom",
+      "symptom": "chest_tightness",
+      "severity": 4
+    },
+    {
+      "type": "blood_pressure",
+      "value": "171/101",
+      "when": "2026-04-09T19:00:00Z"
+    },
+    {
+      "type": "heart_rate",
+      "range": "95 bpm",
+      "when": "2026-04-09T19:05:00Z"
+    }
+  ],
+  "clinical_context": "Chest Tightness in context of hypertensive crisis may indicate cardiac strain."
+}

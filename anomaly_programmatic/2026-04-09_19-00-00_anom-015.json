@@ -1,0 +1,29 @@
+{
+  "anomaly_id": "anom-015",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "vital_sign",
+  "severity": "moderate",
+  "title": "Low Heart Rate Variability 25 ms (Sympathetic Overdrive)",
+  "description": "HRV declined from 72\u219275\u219255\u219263\u219232\u219228\u219225 ms over monitoring period. Final reading of 25 ms indicates significant sympathetic overdrive.",
+  "related_data": [
+    {
+      "type": "hrv",
+      "trend": [
+        72,
+        75,
+        55,
+        63,
+        32,
+        28,
+        25
+      ],
+      "unit": "ms"
+    },
+    {
+      "type": "heart_rate",
+      "range": "91-104 bpm"
+    }
+  ],
+  "clinical_context": "Declining HRV with concurrent tachycardia and hypertensive crisis indicates autonomic dysfunction and heightened cardiovascular risk."
+}

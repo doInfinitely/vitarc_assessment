@@ -1,0 +1,43 @@
+{
+  "event_id": "evt-035",
+  "datetime": "2026-06-10T00:00:00",
+  "event_title": "Appointment: Dr. Faisal Al-Ghamdi (Internal Medicine)",
+  "most_recent_vitals": {
+    "blood_pressure": {
+      "value": "171/101",
+      "systolic": 171,
+      "diastolic": 101,
+      "unit": "mmHg",
+      "when": "2026-04-09T19:00:00Z",
+      "how": "manual_entry"
+    },
+    "blood_glucose": {
+      "value": 230.6,
+      "unit": "mg/dL",
+      "when": "2026-04-09T11:00:00Z",
+      "how": "manual_entry"
+    },
+    "heart_rate": {
+      "value": 95,
+      "unit": "bpm",
+      "when": "2026-04-09T20:55:30Z",
+      "how": "Apple Watch"
+    },
+    "spo2": {
+      "value": 0.96,
+      "unit": "%",
+      "when": "2026-04-09T20:25:00Z",
+      "how": "Apple Watch"
+    }
+  },
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Scheduled appointment with Dr. Faisal Al-Ghamdi. HIGH: BP 171/101 \u2014 hypertensive urgency. HIGH: Blood glucose 230.6 mg/dL \u2014 hyperglycemia. Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "Hypertensive urgency \u2014 contact physician, consider ER evaluation.",
+    "Significant hyperglycemia \u2014 review diabetes management plan."
+  ]
+}

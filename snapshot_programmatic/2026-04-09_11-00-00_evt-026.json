@@ -1,0 +1,86 @@
+{
+  "event_id": "evt-026",
+  "datetime": "2026-04-09T11:00:00Z",
+  "event_title": "Blood Glucose: 230.6 mg/dL",
+  "most_recent_vitals": {
+    "blood_pressure": {
+      "value": "148/92",
+      "systolic": 148,
+      "diastolic": 92,
+      "unit": "mmHg",
+      "when": "2026-04-09T07:30:00Z",
+      "how": "manual_entry"
+    },
+    "blood_glucose": {
+      "value": 230.6,
+      "unit": "mg/dL",
+      "when": "2026-04-09T11:00:00Z",
+      "how": "manual_entry"
+    },
+    "heart_rate": {
+      "value": 96,
+      "unit": "bpm",
+      "when": "2026-04-09T11:00:00Z",
+      "how": "Apple Watch"
+    },
+    "spo2": {
+      "value": 0.96,
+      "unit": "%",
+      "when": "2026-04-09T08:00:00Z",
+      "how": "Apple Watch"
+    }
+  },
+  "medication_adherence_48h": {
+    "summary": "Fully adherent",
+    "details": [
+      {
+        "medication": "Amlodipine 10mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Losartan 100mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T20:15:00Z",
+        "scheduled": "20:00",
+        "delay_minutes": 15,
+        "status": "on_time"
+      },
+      {
+        "medication": "Atorvastatin 20mg",
+        "taken_at": "2026-04-08T22:05:00Z",
+        "scheduled": "22:00",
+        "delay_minutes": 5,
+        "status": "on_time"
+      }
+    ]
+  },
+  "reported_symptoms": [
+    {
+      "symptom": "mild headache",
+      "severity": 3,
+      "when": "2026-04-08T23:30:00Z",
+      "notes": "Slight headache, took paracetamol"
+    }
+  ],
+  "clinical_findings_summary": "Patient-reported: Blood Glucose: 230.6 mg/dL. ELEVATED: BP 148/92 \u2014 Stage 2 hypertension range. HIGH: Blood glucose 230.6 mg/dL \u2014 hyperglycemia. Active symptoms: mild headache (3/10).",
+  "care_team_attention": [
+    "Elevated BP above target \u2014 review antihypertensive regimen.",
+    "Significant hyperglycemia \u2014 review diabetes management plan."
+  ]
+}

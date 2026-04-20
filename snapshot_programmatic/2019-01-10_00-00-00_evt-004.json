@@ -1,0 +1,15 @@
+{
+  "event_id": "evt-004",
+  "datetime": "2019-01-10T00:00:00",
+  "event_title": "Type 2 Diabetes Mellitus with Hyperglycemia Diagnosed",
+  "most_recent_vitals": {},
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Diagnosis of Type 2 Diabetes Mellitus with Hyperglycemia (moderate). Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "No immediate attention items."
+  ]
+}

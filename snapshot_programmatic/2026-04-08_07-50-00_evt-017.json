@@ -1,0 +1,42 @@
+{
+  "event_id": "evt-017",
+  "datetime": "2026-04-08T07:50:00Z",
+  "event_title": "Blood Glucose: 168 mg/dL",
+  "most_recent_vitals": {
+    "blood_pressure": {
+      "value": "142/88",
+      "systolic": 142,
+      "diastolic": 88,
+      "unit": "mmHg",
+      "when": "2026-04-08T07:45:00Z",
+      "how": "manual_entry"
+    },
+    "blood_glucose": {
+      "value": 168,
+      "unit": "mg/dL",
+      "when": "2026-04-08T07:50:00Z",
+      "how": "manual_entry"
+    },
+    "heart_rate": {
+      "value": 83,
+      "unit": "bpm",
+      "when": "2026-04-08T07:45:05Z",
+      "how": "Apple Watch"
+    },
+    "spo2": {
+      "value": 0.98,
+      "unit": "%",
+      "when": "2026-04-08T07:30:00Z",
+      "how": "Apple Watch"
+    }
+  },
+  "medication_adherence_48h": {
+    "summary": "No medication records in 48h window",
+    "details": []
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Patient-reported: Blood Glucose: 168 mg/dL. ELEVATED: BP 142/88 \u2014 Stage 2 hypertension range. ELEVATED: Blood glucose 168 mg/dL \u2014 above target. Medication adherence: No medication records in 48h window.",
+  "care_team_attention": [
+    "Elevated BP above target \u2014 review antihypertensive regimen."
+  ]
+}

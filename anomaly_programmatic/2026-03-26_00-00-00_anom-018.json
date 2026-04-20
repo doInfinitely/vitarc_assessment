@@ -1,0 +1,20 @@
+{
+  "anomaly_id": "anom-018",
+  "event_id": "evt-013",
+  "datetime": "2026-03-26T00:00:00",
+  "category": "document",
+  "severity": "moderate",
+  "title": "Renal Ultrasound: Early Diabetic Nephropathy with Elevated Resistive Index",
+  "description": "Renal ultrasound shows bilateral increased echogenicity suggesting early diabetic nephropathy. Resistive index elevated, indicating early renovascular changes.",
+  "related_data": [
+    {
+      "type": "imaging_finding",
+      "finding": "Increased renal echogenicity"
+    },
+    {
+      "type": "imaging_finding",
+      "finding": "Elevated resistive index 0.72-0.74"
+    }
+  ],
+  "clinical_context": "Early diabetic nephropathy in patient with T2DM and HTN. Strict BP and glucose control essential."
+}

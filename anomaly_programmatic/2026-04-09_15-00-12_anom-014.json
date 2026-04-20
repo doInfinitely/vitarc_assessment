@@ -1,0 +1,18 @@
+{
+  "anomaly_id": "anom-014",
+  "event_id": "evt-031",
+  "datetime": "2026-04-09T15:00:12Z",
+  "category": "vital_sign",
+  "severity": "high",
+  "title": "Sustained Elevated Resting Heart Rate 90-104 bpm",
+  "description": "Wearable records show sustained resting HR 90-104 bpm over ~6 hours, well above expected resting range of 60-80 bpm.",
+  "related_data": [
+    {
+      "type": "heart_rate",
+      "range": "90-104 bpm",
+      "duration": "~6 hours",
+      "source": "Apple Watch"
+    }
+  ],
+  "clinical_context": "Resting tachycardia in hypertensive patient with LVH increases myocardial oxygen demand. Warrants cardiac monitoring."
+}

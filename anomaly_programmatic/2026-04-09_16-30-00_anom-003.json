@@ -1,0 +1,20 @@
+{
+  "anomaly_id": "anom-003",
+  "event_id": "evt-028",
+  "datetime": "2026-04-09T16:30:00Z",
+  "category": "vital_sign",
+  "severity": "high",
+  "title": "Blood Pressure 162/98 mmHg with Symptoms",
+  "description": "BP 162/98 mmHg with patient reporting symptoms. Symptomatic hypertension requires clinical attention.",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "162/98"
+    },
+    {
+      "type": "symptom",
+      "symptom": "dizziness"
+    }
+  ],
+  "clinical_context": "Symptomatic Stage 2 hypertension with end-organ disease risk. Morning antihypertensives taken late may be contributing factor."
+}

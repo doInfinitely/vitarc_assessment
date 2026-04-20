@@ -1,0 +1,65 @@
+{
+  "event_id": "evt-019",
+  "datetime": "2026-04-08T13:30:00Z",
+  "event_title": "Blood Glucose: 195 mg/dL",
+  "most_recent_vitals": {
+    "blood_pressure": {
+      "value": "142/88",
+      "systolic": 142,
+      "diastolic": 88,
+      "unit": "mmHg",
+      "when": "2026-04-08T07:45:00Z",
+      "how": "manual_entry"
+    },
+    "blood_glucose": {
+      "value": 195,
+      "unit": "mg/dL",
+      "when": "2026-04-08T13:30:00Z",
+      "how": "manual_entry"
+    },
+    "heart_rate": {
+      "value": 72,
+      "unit": "bpm",
+      "when": "2026-04-08T13:25:14Z",
+      "how": "Apple Watch"
+    },
+    "spo2": {
+      "value": 0.98,
+      "unit": "%",
+      "when": "2026-04-08T13:15:00Z",
+      "how": "Apple Watch"
+    }
+  },
+  "medication_adherence_48h": {
+    "summary": "Fully adherent",
+    "details": [
+      {
+        "medication": "Amlodipine 10mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Losartan 100mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      },
+      {
+        "medication": "Metformin 1000mg",
+        "taken_at": "2026-04-08T08:10:00Z",
+        "scheduled": "08:00",
+        "delay_minutes": 10,
+        "status": "on_time"
+      }
+    ]
+  },
+  "reported_symptoms": [],
+  "clinical_findings_summary": "Patient-reported: Blood Glucose: 195 mg/dL. ELEVATED: BP 142/88 \u2014 Stage 2 hypertension range. HIGH: Blood glucose 195 mg/dL \u2014 hyperglycemia.",
+  "care_team_attention": [
+    "Elevated BP above target \u2014 review antihypertensive regimen.",
+    "Blood glucose above post-prandial target \u2014 consider medication adjustment."
+  ]
+}

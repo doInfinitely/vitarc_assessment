@@ -1,0 +1,32 @@
+{
+  "anomaly_id": "anom-004",
+  "event_id": "evt-030",
+  "datetime": "2026-04-09T19:00:00Z",
+  "category": "vital_sign",
+  "severity": "critical",
+  "title": "Hypertensive Urgency \u2014 BP 171/101 mmHg",
+  "description": "BP 171/101 mmHg with symptoms (chest tightness). Represents hypertensive urgency requiring clinical evaluation.",
+  "related_data": [
+    {
+      "type": "blood_pressure",
+      "value": "171/101"
+    },
+    {
+      "type": "symptom",
+      "symptom": "chest_tightness",
+      "severity": 4
+    },
+    {
+      "type": "trend",
+      "values": [
+        142,
+        134,
+        148,
+        162,
+        171
+      ],
+      "parameter": "systolic_bp"
+    }
+  ],
+  "clinical_context": "Hypertensive urgency (SBP \u2265170 with symptoms) in patient with known LVH, cardiomegaly, and early nephropathy. ER evaluation recommended for end-organ assessment."
+}
