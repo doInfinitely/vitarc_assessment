@@ -1,0 +1,6 @@
+[heading_clustering]
+# Cosine distance threshold for agglomerative clustering of section headings.
+# Chosen so that "Clinical Correlation" and "Clinical Indication" merge into
+# one cluster, while no same-document same-level headings are merged.
+# Model: all-MiniLM-L6-v2, linkage: average, metric: cosine.
+threshold = 0.4489
